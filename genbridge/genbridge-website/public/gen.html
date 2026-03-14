@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GenBridge | Reverse Mentorship Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-content container">
+      <div class="logo">Gen<span>Bridge</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Concept</a></li>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#matcher">Find Mentor</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="btn btn-primary" onclick="openModal('apply')">Apply Now</button>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <span style="color:var(--secondary);font-weight:700;text-transform:uppercase;font-size:12px">Thynk Unlimited Presents</span>
+      <h1>Bridging the Generational <br><span style="background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-family:Poppins">Digital Divide</span></h1>
+      <p>The premier Reverse Mentorship platform where Gen Z experts empower professionals with cutting-edge tech skills, and leaders share industry wisdom.</p>
+
+      <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="openModal('find')">Find Mentor</button>
+        <button class="btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Explore Pricing</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT + TABS -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="card">
+        <h2 style="font-family:Poppins;margin-bottom:8px">How GenBridge Works</h2>
+        <p style="color:#64748B">Reverse mentorship pairing — Gen Z coaches teach digital skills, while senior professionals share domain insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET RESEARCH -->
+  <section id="market" class="section">
+    <div class="container">
+      <h2>Market Research Insights</h2>
+      <p>Our platform is positioned to meet the growing demand for mentorship in the digital age. Here are some key insights:</p>
+      <ul>
+        <li>Over 70% of professionals believe mentorship is crucial for career development.</li>
+        <li>Gen Z is expected to make up 30% of the workforce by 2030, bringing fresh perspectives and skills.</li>
+        <li>Companies with mentorship programs report higher employee satisfaction and retention rates.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Pricing & Plans</h2>
+      <p class="small">Flexible options for individuals and corporate clients. Choose subscription or pay-per-session.</p>
+
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>Individual — Basic</h3>
+          <div class="price">$12 / month</div>
+          <ul>
+            <li>Access to mentor marketplace</li>
+            <li>Book pay-per-session: $30 / session</li>
+            <li>Community access</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('apply','Individual - Basic')">Choose</button>
+        </div>
+
+        <div class="plan vip">
+          <h3>Individual — Premium</h3>
+          <div class="price">$29 / month</div>
+          <ul>
+            <li>Priority matching</li>
+            <li>Pay-per-session: $20 / session</li>
+            <li>Monthly group workshop</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('apply','Individual - Premium')">Choose</button>
+        </div>
+
+        <div class="plan">
+          <h3>Corporate — Starter</h3>
+          <div class="price">$499 / month</div>
+          <ul>
+            <li>Up to 25 seats</li>
+            <li>Pay-per-session commission: 15%</li>
+            <li>Team analytics</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('apply','Corporate - Starter')">Choose</button>
+        </div>
+
+        <div class="plan">
+          <h3>Corporate — Enterprise</h3>
+          <div class="price">Custom</div>
+          <ul>
+            <li>Dedicated account manager</li>
+            <li>Custom pricing & SLA</li>
+            <li>Onsite workshops</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('apply','Corporate - Enterprise')">Contact Sales</button>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h4>Fees & Commissions</h4>
+        <p class="small">Pay-per-session fees are collected directly; platform commission on mentor earnings: <strong>15%</strong> (standard). Premium add-ons (recordings, analytics) billed separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px">
+        <div>
+          <h4 style="color:#fff;margin-bottom:8px">GenBridge</h4>
+          <p style="max-width:360px;color:#9fb0c6">Reverse mentorship to upskill teams fast with Gen Z experts.</p>
+        </div>
+        <div style="min-width:180px">
+          <h4 style="color:#fff">Contact</h4>
+          <p style="color:#9fb0c6">hello@genbridge.example</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

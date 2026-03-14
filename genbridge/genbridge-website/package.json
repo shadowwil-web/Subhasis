@@ -1,0 +1,27 @@
+{
+  "name": "genbridge-website",
+  "version": "1.0.0",
+  "description": "A reverse mentorship platform connecting Gen Z experts with professionals.",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "live-server public",
+    "build": "echo 'Build process can be defined here.'"
+  },
+  "keywords": [
+    "mentorship",
+    "reverse mentorship",
+    "Gen Z",
+    "education"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/genbridge-website.git"
+  },
+  "homepage": "https://yourusername.github.io/genbridge-website/"
+}

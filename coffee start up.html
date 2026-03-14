@@ -1,0 +1,152 @@
+<
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coffee Startup</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #f5f3ee;
+            color: #3e2723;
+        }
+        header {
+            background: #6f4e37;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #a67c52;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffe0b2;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1rem;
+            background: #fff8f0;
+        }
+        .hero img {
+            width: 120px;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .cta-btn {
+            background: #6f4e37;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: #a67c52;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 3rem 1rem;
+            background: #f5f3ee;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(111, 78, 55, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .product-card img {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .product-card p {
+            font-size: 0.95rem;
+            color: #6f4e37;
+        }
+        footer {
+            background: #6f4e37;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brewed Awakening</h1>
+        <p>Freshly roasted coffee delivered to your door</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero" id="home">
+        <img src="https://www.arakucoffee.in/products/coffee-mug-1?srsltid=AfmBOoqv0nY2cDKU4L7DJVYmEcXZZ_agB1Rk_7bUmq7PenrIzFsrzbqq&psig=AOvVaw2LL1SE_D_qnQwtu-9yBn3F&ust=1755615759871000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLDn7b_QlI8DFQAAAAAdAAAAABAE" alt="Coffee Mug">
+        <h1>Start Your Day Right</h1>
+        <p>Discover the rich flavors of our ethically sourced coffee beans. Whether you love a bold espresso or a smooth latte, we have the perfect blend for you.</p>
+        <button class="cta-btn">Shop Now</button>
+    </section>
+    <section class="products" id="products">
+        <div class="product-card">
+            <img src="https://img.icons8.com/ios-filled/100/6f4e37/coffee-beans.png" alt="Beans">
+            <h3>Signature Blend</h3>
+            <p>Our house blend, roasted to perfection for a balanced and smooth taste.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://img.icons8.com/ios-filled/100/6f4e37/coffee-to-go.png" alt="To Go">
+            <h3>Cold Brew</h3>
+            <p>Refreshing and bold cold brew, steeped for 18 hours for maximum flavor.</p>
+        </div>
+        <div class="product-card">
+            <img src="https://img.icons8.com/ios-filled/100/6f4e37/coffee-pot.png" alt="Pot">
+            <h3>Single Origin</h3>
+            <p>Explore unique flavors from our single origin selections, sourced directly from farmers.</p>
+        </div>
+    </section>
+    <section id="about" style="padding:2rem 1rem; background:#fff8f0;">
+        <h2>About Us</h2>
+        <p>We are passionate about coffee and sustainability. Our beans are sourced from small farms, roasted locally, and delivered fresh. Join us in supporting ethical coffee production.</p>
+    </section>
+    <section id="contact" style="padding:2rem 1rem;">
+        <h2>Contact</h2>
+        <p>Email: hello@brewedawakening.com</p>
+        <p>Instagram: @brewedawakening</p>
+    </section>
+    <footer>
+        &copy; 2024 Brewed Awakening. All rights reserved.
+    </footer>
+</body>
+</html></div>

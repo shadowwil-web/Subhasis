@@ -1,0 +1,7 @@
+body { margin: 0; font-family: sans-serif; }
+header { text-align: center; padding: 2rem; background: #f2f2f2; }
+#projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 1rem; }
+.project-card { position: relative; cursor: pointer; overflow: hidden; }
+.project-card img { width: 100%; display: block; transition: transform 0.3s ease; }
+.project-card:hover img { transform: scale(1.05); }
+footer { text-align: center; padding: 1rem; background: #333; color: #fff; }

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Couple on Bench in Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #b7a7c9 0%, #f7e6f0 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .scene {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(to top, #b7a7c9 0%, #f7e6f0 100%);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #a48bb944;
+      overflow: hidden;
+    }
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0; top: 0;
+      z-index: 1;
+    }
+    .building {
+      position: absolute;
+      left: 50%;
+      top: 90px;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 60px;
+      background: #d1c3d6;
+      border-radius: 0 0 16px 16px;
+      z-index: 2;
+      box-shadow: 0 4px 16px #a48bb944;
+    }
+    .building::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -30px;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 30px;
+      background: #b7a7c9;
+      border-radius: 0 0 12px 12px;
+    }
+    .fence {
+      position: absolute;
+      left: 0;
+      top: 150px;
+      width: 100%;
+      height: 30px;
+      z-index: 3;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .fence-bar {
+      width: 4px;
+      height: 30px;
+      background: #b7a7c9;
+      margin: 0 8px;
+      border-radius: 2px;
+    }
+    .fence-rail {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      height: 6px;
+      background: #b7a7c9;
+      border-radius: 3px;
+    }
+    .tree {
+      position: absolute;
+      width: 80px;
+      height: 120px;
+      top: 40px;
+      z-index: 4;
+    }
+    .tree.left { left: 0; }
+    .tree.right { right: 0; }
+    .tree-trunk {
+      position: absolute;
+      left: 36px;
+      top: 80px;
+      width: 8px;
+      height: 40px;
+      background: #6d4c41;
+      border-radius: 4px;
+      z-index: 1;
+    }
+    .tree-leaves {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 60px;
+      height: 80px;
+      background: #7b5c7e;
+      border-radius: 50% 50% 40% 40%;
+      z-index: 2;
+      box-shadow: 0 4px 16px #7b5c7e44;
+    }
+    .bench {
+      position: absolute;
+      left: 50%;
+      bottom: 80px;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 40px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bench-seat {
+      width: 180px;
+      height: 16px;
+      background: #a67c52;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #3333;
+      position: relative;
+      border: 2px solid #7a5230;
+      z-index: 2;
+    }
+    .bench-back {
+      width: 180px;
+      height: 12px;
+      background: #a67c52;
+      border-radius: 6px;
+      position: absolute;
+      top: -14px;
+      left: 0;
+      border: 2px solid #7a5230;
+      z-index: 1;
+    }
+    .bench-leg {
+      width: 10px;
+      height: 24px;
+      background: #7a5230;
+      position: absolute;
+      bottom: -24px;
+      border-radius: 3px;
+      box-shadow: 0 2px 6px #3333;
+    }
+    .bench-leg.left { left: 20px; }
+    .bench-leg.right { right: 20px; }
+    .couple {
+      position: absolute;
+      left: 50%;
+      bottom: 92px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 20;
+      align-items: flex-end;
+    }
+    .person {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      min-width: 48px;
+    }
+    .head {
+      width: 32px;
+      height: 32px;
+      background: #fcd7b6;
+      border-radius: 50%;
+      border: 2px solid #e2b48c;
+      margin-bottom: -6px;
+      z-index: 1;
+      box-shadow: 0 2px 8px #e2b48c44;
+      position: relative;
+    }
+    .hair {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 28px;
+      height: 16px;
+      border-radius: 50% 50% 40% 40%;
+      background: #3a2c1a;
+      z-index: 2;
+    }
+    .person.girl .hair {
+      background: #b7357a;
+      width: 30px;
+      height: 18px;
+      left: 0px;
+      top: 0px;
+    }
+    .body {
+      width: 26px;
+      height: 38px;
+      border-radius: 13px 13px 18px 18px;
+      background: linear-gradient(180deg, #4a90e2 0%, #357ab7 100%);
+      margin-bottom: -2px;
+      position: relative;
+      z-index: 0;
+      box-shadow: 0 2px 8px #357ab744;
+    }
+    .person.girl .body {
+      background: linear-gradient(180deg, #e24a90 0%, #b7357a 100%);
+    }
+    .legs {
+      display: flex;
+      gap: 6px;
+      margin-top: -2px;
+      justify-content: center;
+    }
+    .leg {
+      width: 8px;
+      height: 22px;
+      background: #444;
+      border-radius: 6px 6px 12px 12px;
+      box-shadow: 0 2px 4px #4444;
+    }
+    /* Arms for holding hands */
+    .arms {
+      position: absolute;
+      top: 30px; /* Lower arms to lap level */
+      left: 0;
+      width: 60px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .arm {
+      width: 18px;
+      height: 8px;
+      background: #fcd7b6;
+      border-radius: 8px;
+      position: absolute;
+      box-shadow: 0 1px 2px #e2b48c44;
+      transition: all 0.2s;
+    }
+    /* Boy's left arm (holding) */
+    .person.boy .arm.left {
+      left: 10px;
+      top: 10px;
+      transform: rotate(65deg) translate(10px, 18px);
+      z-index: 3;
+    }
+    /* Boy's right arm */
+    .person.boy .arm.right {
+      right: 0;
+      top: 0;
+      transform: rotate(-25deg) translate(-2px, 8px);
+    }
+    /* Girl's right arm (holding) */
+    .person.girl .arm.right {
+      right: 10px;
+      top: 10px;
+      transform: rotate(-65deg) translate(-10px, 18px);
+      z-index: 3;
+    }
+    /* Girl's left arm */
+    .person.girl .arm.left {
+      left: 0;
+      top: 0;
+      transform: rotate(25deg) translate(2px, 8px);
+    }
+    /* Hands holding each other */
+    .holding-hands {
+      position: absolute;
+      left: 50%;
+      top: 58px;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 18px;
+      z-index: 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hand {
+      width: 14px;
+      height: 14px;
+      background: #fcd7b6;
+      border-radius: 50%;
+      border: 1px solid #e2b48c;
+      margin: 0 1px;
+      box-shadow: 0 1px 2px #e2b48c44;
+    }
+    /* Heart effect styling */
+    .love-heart {
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 220px;
+      z-index: 30;
+      pointer-events: none;
+    }
+    .love-heart svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 0 24px #e24a9044);
+    }
+    /* Soft shadow under bench */
+    .bench-shadow {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 18px;
+      background: radial-gradient(ellipse at center, #a67c5233 0%, #fff0 100%);
+      border-radius: 50%;
+      z-index: 1;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="background">
+      <div class="building"></div>
+      <div class="fence">
+        <div class="fence-rail"></div>
+        <!-- Fence bars -->
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+        <div class="fence-bar"></div>
+      </div>
+      <div class="tree left">
+        <div class="tree-trunk"></div>
+        <div class="tree-leaves"></div>
+      </div>
+      <div class="tree right">
+        <div class="tree-trunk"></div>
+        <div class="tree-leaves"></div>
+      </div>
+    </div>
+    <div class="love-heart">
+      <!-- SVG for heart effect -->
+      <svg viewBox="0 0 320 220">
+        <path
+          d="M160,210
+             C40,140 40,60 160,80
+             C280,60 280,140 160,210"
+          fill="none"
+          stroke="#fff"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-dasharray="2,18"
+          opacity="0.7"
+        />
+      </svg>
+    </div>
+    <div class="bench-shadow"></div>
+    <div class="bench">
+      <div class="bench-back"></div>
+      <div class="bench-seat"></div>
+      <div class="bench-leg left"></div>
+      <div class="bench-leg right"></div>
+    </div>
+    <div class="couple">
+      <div class="person boy">
+        <div class="head">
+          <div class="hair"></div>
+        </div>
+        <div class="body"></div>
+        <div class="arms">
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+        </div>
+        <div class="legs">
+          <div class="leg"></div>
+          <div class="leg"></div>
+        </div>
+      </div>
+      <div class="holding-hands">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+      <div class="person girl">
+        <div class="head">
+          <div class="hair"></div>
+        </div>
+        <div class="body"></div>
+        <div class="arms">
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+        </div>
+        <div class="legs">
+          <div class="leg"></div>
+          <div class="leg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
